@@ -11,4 +11,13 @@ class RecipeConverter
       end
     end
   end
+
+  def to_cups
+    @ingredients_list.each do |ingredient|
+      ingredient.each do |key, value|
+        cup = value / 15 /16
+        ingredient[key] = cup
+      end
+    end
+  end
 end
